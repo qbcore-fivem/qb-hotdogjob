@@ -8,6 +8,8 @@ local Translations = {
         no_more = 'Você não tem mais %{value} em frente ao conselho',
         deposit_notreturned = 'Você não tinha um Carrinho de Cachorro-Quente',
         no_dogs = 'Você não tem nenhum cachorro-quente',
+        already_preparing = 'Você já está preparando comida!',
+        minigame_unavailable = 'O sistema de minijogos não está disponível',
     },
     success = {
         deposit = 'Você pagou um depósito de $%{deposit}!',

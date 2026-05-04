@@ -8,6 +8,8 @@ local Translations = {
         no_more = 'Teil pole selle kohta volikogu ees %{value} rohkem',
         deposit_notreturned = 'Teil ei olnud Hot Dogi Standi',
         no_dogs = 'Teil pole hotdoge',
+        already_preparing = 'Sa juba valmistad toitu!',
+        minigame_unavailable = 'Minimängu süsteem ei ole saadaval',
     },
     success = {
         deposit = 'Maksite sissemakse $%{deposit}!',

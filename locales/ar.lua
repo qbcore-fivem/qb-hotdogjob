@@ -7,6 +7,9 @@ local Translations = {
         no_stand_found = 'لم يكن موقف النقانق الخاص بك في أي مكان يمكن رؤيته ، فلن تسترد وديعتك',
         no_more = 'المزيد عن هذا %{value} ليس لديك',
         deposit_notreturned = 'لم يكن لديك جناح هوت دوج',
+        no_dogs = 'ليس لديك أي هوت دوج للبيع. قم بالتحضير أولاً!',
+        already_preparing = 'أنت تقوم بالفعل بتحضير الطعام!',
+        minigame_unavailable = 'نظام اللعبة المصغرة غير متاح',
     },
     success = {
         deposit = 'لقد دفعت إيداع %{deposit} دولارًا!',
@@ -25,13 +28,19 @@ local Translations = {
         grab_stall = '[~g~G~s~] - ﻚﺸﻜﻟﺍ ﻚﻳﺮﺤﺗ',
         drop_stall = '[~g~G~s~] - ﻚﺸﻜﻟﺍ ﻙﺮﺗ',
         grab = 'ﻚﺸﻜﻟﺍ ﻚﻳﺮﺤﺗ',
+        prepare = 'تحضير هوت دوج',
+        toggle_sell = 'تبديل البيع',
         selling_prep = '[~g~E~s~] ﺝﻭﺩ ﺕﻮﻬﻟﺍ ﺮﻴﻀﺤﺗ / [~g~ﻊﻴﺒﺗ ﺖﻧﺍ~w~]',
         not_selling = '[~g~E~s~] ﺝﻭﺩ ﺕﻮﻬﻟﺍ ﺮﻴﻀﺤﺗ / [~r~ﻊﻴﺒﻟﺍ ﻦﻋ ﻒﻗﻮﺘﻣ~w~]',
         sell_dogs = '[~g~7~s~] %{value} x HotDogs = $%{value2} / [~g~8~s~] ﺾﻓﺭ',
+        sell_dogs_target = 'بيع %{value} x هوت دوج مقابل $%{value2}',
         admin_removed = "إزالة موقف هوت دوج",
         label_a = "(A) الأفضل",
         label_b = "(B) متوسط",
         label_c = "(C) عادي"
+    },
+    keymapping = {
+        gkey = 'اترك عربة الهوت دوج',
     }
 }
 

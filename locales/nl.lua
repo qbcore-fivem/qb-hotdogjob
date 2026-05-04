@@ -8,6 +8,8 @@ local Translations = {
         no_more = 'Je hebt geen %{value} meer hierover in de raad.',
         deposit_notreturned = 'Je hebt geen hotdog stand meer',
         no_dogs = 'Je hebt geen hotdogs',
+        already_preparing = 'Je bent al eten aan het bereiden!',
+        minigame_unavailable = 'Het minigame-systeem is niet beschikbaar',
     },
     success = {
         deposit = 'Je hebt een borg van $%{deposit} betaald!',

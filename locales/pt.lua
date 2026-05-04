@@ -8,6 +8,8 @@ local Translations = {
         no_more = 'Não consegues carregar mais stock de %{value} no teu rank',
         deposit_notreturned = 'Não tens um stand de cachorros quentes',
         no_dogs = 'Não tens cachorros quentes',
+        already_preparing = 'Já estás a preparar comida!',
+        minigame_unavailable = 'O sistema de minijogos não está disponível',
     },
     success = {
         deposit = 'Pagaste um depósito de %{deposit}€ pelo stand!',

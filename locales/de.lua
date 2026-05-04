@@ -7,6 +7,9 @@ local Translations = {
         no_stand_found = 'Ihr Hotdog-Stand war nirgends zu sehen. Sie erhalten Ihre Kaution nicht zurück!',
         no_more = 'Du hast keine %{value} in deinem Stand',
         deposit_notreturned = 'Du hast keinen HotDog Stand',
+        no_dogs = 'Du hast keine Hotdogs zum Verkaufen. Bereite zuerst welche zu!',
+        already_preparing = 'Du bereitest bereits Essen zu!',
+        minigame_unavailable = 'Das Minispiel-System ist nicht verfügbar',
     },
     success = {
         deposit = 'Sie haben eine Kaution in Höhe von 250 Dollar hinterlegt!',
@@ -25,13 +28,19 @@ local Translations = {
         grab_stall = '[~g~G~s~] Stand nehmen',
         drop_stall = '[~g~G~s~] Stand hinstellen',
         grab = 'Stand nehmen',
+        prepare = 'Hotdog vorbereiten',
+        toggle_sell = 'Verkauf umschalten',
         selling_prep = '[~g~E~s~] HotDog herstellen [Status: ~g~Verkauf Geöffnet~w~]',
         not_selling = '[~g~E~s~] Hotdog prepare [Status: ~r~Verkauf Geschlossen~w~]',
         sell_dogs = '[~g~7~s~] Verkaufe %{value} x HotDogs für $%{value2} / [~g~8~s~] Ablehnen',
+        sell_dogs_target = 'Verkaufe %{value} x HotDogs für $%{value2}',
         admin_removed = "Hot Dog Stand Eingelagert.",
         label_a = "Perfekt (A)",
         label_b = "Selten (B)",
         label_c = "Gewöhnlich (C)"
+    },
+    keymapping = {
+        gkey = 'Hotdog-Stand loslassen',
     }
 }
 

@@ -12,6 +12,8 @@ local Translations = {
         no_more = 'Nu mai ai %{value} in fata consiliului :)',
         deposit_notreturned = 'Nu ai avut un carut de Hot Dogs',
         no_dogs = 'Se pare ca nu ai niciun Hod Dog!',
+        already_preparing = 'Deja pregatesti mancare!',
+        minigame_unavailable = 'Sistemul de minijocuri nu este disponibil',
     },
     success = {
         deposit = 'Ai platit suma de $%{deposit} ca si garantie!',

@@ -3,36 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotdog Stock</title>
+    <title>Hotdog Stand</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-    <body>
-        <div class="container">
-            <div class="hotdogs-stock">
-                <span id="hotdogs-stock-header">STOCK</span>
-                <span id="my-level">LEVEL 1 : 100xp</span>
+<body style="background: transparent !important; background-color: transparent !important;">
+    <div class="container">
 
-                <div class="hotdogs-stocks">
-                    <div class="stock" data-stock="exotic">
-                        <img src="./icon.png" class="stock-img">
-                        <span class="stock-amount">0 / 15</span>
-                        <span class="stock-rating" style="color: green;">A</span>
+        <!-- Text Prompt (bottom-left) -->
+        <div id="text-prompt" class="text-prompt">
+            <div class="tp-inner">
+                <i class="fas fa-circle-info tp-icon"></i>
+                <div class="text-prompt-text"></div>
+            </div>
+        </div>
+
+        <!-- Main HUD Panel (top-right) -->
+        <div class="panel">
+
+            <!-- Header -->
+            <div class="panel-header">
+                <div class="brand-icon">
+                    <i class="fas fa-hotdog"></i>
+                </div>
+                <div class="brand-copy">
+                    <div class="brand-name">HOTDOG STAND</div>
+                    <div class="brand-level" id="my-level">Level 1 &bull; 0 XP</div>
+                </div>
+                <div class="status-pip"></div>
+            </div>
+
+            <div class="rule"></div>
+
+            <!-- Stock -->
+            <div class="section-label">INVENTORY</div>
+            <div class="stock-list">
+
+                <!-- Exotic -->
+                <div class="stock-item" data-stock="exotic">
+                    <div class="tier-strip exotic-strip"></div>
+                    <div class="stock-body">
+                        <div class="stock-row">
+                            <div class="stock-ico exotic-ico"><i class="fas fa-fire"></i></div>
+                            <div class="stock-meta">
+                                <div class="stock-name-row">
+                                    <span class="stock-name">Exotic</span>
+                                    <span class="grade exotic-grade">A+</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill exotic-fill"></div>
+                                </div>
+                            </div>
+                            <div class="stock-num">
+                                <span class="current-amount">0</span>
+                                <span class="num-sep">/</span>
+                                <span class="max-amount">15</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stock" data-stock="rare">
-                        <img src="./icon.png" class="stock-img">
-                        <span class="stock-amount">0 / 15</span>
-                        <span class="stock-rating" style="color: orange;">B</span>
+                </div>
+
+                <!-- Rare -->
+                <div class="stock-item" data-stock="rare">
+                    <div class="tier-strip rare-strip"></div>
+                    <div class="stock-body">
+                        <div class="stock-row">
+                            <div class="stock-ico rare-ico"><i class="fas fa-gem"></i></div>
+                            <div class="stock-meta">
+                                <div class="stock-name-row">
+                                    <span class="stock-name">Rare</span>
+                                    <span class="grade rare-grade">B+</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill rare-fill"></div>
+                                </div>
+                            </div>
+                            <div class="stock-num">
+                                <span class="current-amount">0</span>
+                                <span class="num-sep">/</span>
+                                <span class="max-amount">15</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stock" data-stock="common">
-                        <img src="./icon.png" class="stock-img">
-                        <span class="stock-amount">0 / 15</span>
-                        <span class="stock-rating" style="color: red;">C</span>
+                </div>
+
+                <!-- Common -->
+                <div class="stock-item" data-stock="common">
+                    <div class="tier-strip common-strip"></div>
+                    <div class="stock-body">
+                        <div class="stock-row">
+                            <div class="stock-ico common-ico"><i class="fas fa-hotdog"></i></div>
+                            <div class="stock-meta">
+                                <div class="stock-name-row">
+                                    <span class="stock-name">Common</span>
+                                    <span class="grade common-grade">C</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill common-fill"></div>
+                                </div>
+                            </div>
+                            <div class="stock-num">
+                                <span class="current-amount">0</span>
+                                <span class="num-sep">/</span>
+                                <span class="max-amount">15</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+            </div><!-- /stock-list -->
+
+            <!-- Controls -->
+            <div id="controls-panel" class="controls-panel">
+                <div class="rule"></div>
+                <div class="section-label">CONTROLS</div>
+
+                <div id="control-grab" class="control-row" style="display: none;">
+                    <span class="keycap">G</span>
+                    <span class="control-text" id="control-grab-text">Grab Stand</span>
+                </div>
+
+                <div id="control-release" class="control-row" style="display: none;">
+                    <span class="keycap">G</span>
+                    <span class="control-text" id="control-release-text">Release Stand</span>
+                </div>
+
+                <div id="control-prepare" class="control-row" style="display: none;">
+                    <span class="keycap">E</span>
+                    <span class="control-text" id="control-prepare-text">Prepare Hotdog</span>
+                </div>
+
+                <div id="control-sell" class="control-row sell-row" style="display: none;">
+                    <span class="sell-icon"><i class="fas fa-coins"></i></span>
+                    <span class="control-text" id="control-sell-text">Sell</span>
+                </div>
+            </div>
+
+        </div><!-- /panel -->
+
+        <div id="cooking-minigame" class="cooking-minigame" style="display: none;">
+            <div class="cooking-card">
+                <div class="cooking-title">HOTDOG COOKING</div>
+                <div id="cooking-subtitle" class="cooking-subtitle">Press E in the green zone</div>
+
+                <div class="cooking-meta">
+                    <span id="cooking-round">Round 1/4</span>
+                    <span id="cooking-faults">Faults 0/2</span>
+                    <span id="cooking-combo">Combo x0</span>
+                    <span id="cooking-timer">2.2s</span>
+                </div>
+
+                <div class="cooking-bar">
+                    <div id="cooking-window" class="cooking-window"></div>
+                    <div id="cooking-cursor" class="cooking-cursor"></div>
                 </div>
             </div>
         </div>
-    </body>
+
+    </div>
     <script src="./ui.js"></script>
+</body>
 </html>

@@ -1,9 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Kakarot'
+author 'Kakarot & Stevie'
 description 'Allows players to sell hotdogs to npcs for money'
-version '1.2.2'
+version '2.0.0'
 
 ui_page 'html/ui.html'
 
@@ -18,6 +18,7 @@ client_scripts {
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
     '@PolyZone/EntityZone.lua',
+    '@PolyZone/CircleZone.lua',
     'client/main.lua'
 }
 

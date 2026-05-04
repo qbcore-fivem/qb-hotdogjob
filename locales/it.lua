@@ -7,6 +7,9 @@ local Translations = {
         no_stand_found = 'Il tuo chiosco degli hot dog non è stato riconsegnato, non ricevererai il tuo deposito indietro!',
         no_more = 'Non hai nessun %{value} davanti al chiosco',
         deposit_notreturned = 'Non hai un chiosco degli Hot Dog',
+        no_dogs = 'Non hai hotdog da vendere. Preparane prima qualcuno!',
+        already_preparing = 'Stai già preparando del cibo!',
+        minigame_unavailable = 'Il sistema minigioco non è disponibile',
     },
     success = {
         deposit = 'Hai pagato un deposito di $%{deposit}!',
@@ -25,13 +28,19 @@ local Translations = {
         grab_stall = '[~g~G~s~] Prendi chiosco',
         drop_stall = '[~g~G~s~] Lascia chiosco',
         grab = 'Prendi chiosco',
+        prepare = 'Prepara Hotdog',
+        toggle_sell = 'Attiva/Disattiva vendita',
         selling_prep = '[~g~E~s~] Prepara Hotdog [Vendite: ~g~Vendendo~w~]',
         not_selling = '[~g~E~s~] Prepara Hotdog [Vendite: ~r~Non vendendo~w~]',
         sell_dogs = '[~g~7~s~] Vendi %{value} x HotDogs per $%{value2} / [~g~8~s~] Rifiuta',
+        sell_dogs_target = 'Vendi %{value} x HotDogs per $%{value2}',
         admin_removed = "Chiosco Hot Dog rimosso",
         label_a = "Perfetto (A)",
         label_b = "Raro (B)",
         label_c = "Comune (C)"
+    },
+    keymapping = {
+        gkey = 'Lascia il chiosco degli hotdog',
     }
 }
 

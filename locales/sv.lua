@@ -7,6 +7,9 @@ local Translations = {
         no_stand_found = 'Din korv-vagn går inte att hitta någonstans, du får inte tillbaka din deposition!',
         no_more = 'Du har inga %{value} kvar inför fullmäktige',
         deposit_notreturned = 'Du hade ingen korv-vagn',
+        no_dogs = 'Du har inga varmkorvar att sälja. Förbered några först!',
+        already_preparing = 'Du håller redan på att laga mat!',
+        minigame_unavailable = 'Minispelssystemet är inte tillgängligt',
     },
     success = {
         deposit = 'Du betalade %{deposit} kr i deposition!',
@@ -25,13 +28,19 @@ local Translations = {
         grab_stall = '[~g~G~s~] Greppa vagnen',
         drop_stall = '[~g~G~s~] Släpp vagnen',
         grab = 'Greppa vagnen',
+        prepare = 'Förbered varmkorv',
+        toggle_sell = 'Växla försäljning',
         selling_prep = '[~g~E~s~] Förberedelse av korv [Försäljning: ~g~Säljer~w~]',
         not_selling = '[~g~E~s~] Förberedelse av korv [Försäljning: ~r~Säljer inte~w~]',
         sell_dogs = '[~g~7~s~] Sälj %{value} x varmkorvar för $%{value2} / [~g~8~s~] Avböj',
+        sell_dogs_target = 'Sälj %{value} x varmkorvar för $%{value2}',
         admin_removed = "Korv-vagnen borttagen",
         label_a = "Perfekt (A)",
         label_b = "Mycket bra (B)",
         label_c = "Ok (C)"
+    },
+    keymapping = {
+        gkey = 'Släpp korv-vagnen',
     }
 }
 
