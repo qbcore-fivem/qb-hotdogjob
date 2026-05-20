@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject({ 'Functions' })
 local PlayerData = QBCore.Functions.GetPlayerData()
 local HotdogBlip = nil
 local IsWorking = false
@@ -802,9 +802,16 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     UpdateBlip()
 end)
 
-RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
-    PlayerData.job = JobInfo
-    UpdateBlip()
+RegisterNetEvent('QBCore:Client:OnPlayerUpdated', function(key, val)
+    if key == 'job' then
+        local JobInfo = val
+        PlayerData.job = JobInfo
+        UpdateBlip()
+    elseif key == 'all' then
+        local JobInfo = val.job
+        PlayerData.job = JobInfo
+        UpdateBlip()
+    end
 end)
 
 RegisterNetEvent('qb-hotdogjob:client:UpdateReputation', function(JobRep)

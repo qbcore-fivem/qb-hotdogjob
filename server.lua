@@ -1,13 +1,13 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject({ 'Functions', 'Commands' })
 local Bail = {}
 
 -- Callbacks
 
 QBCore.Functions.CreateCallback('qb-hotdogjob:server:HasMoney', function(source, cb)
-    local Player = QBCore.Functions.GetPlayer(source)
+    local Player = exports['qb-core']:GetPlayer(source)
 
     if Player.PlayerData.money.bank >= Config.StandDeposit then
-        Player.Functions.RemoveMoney('bank', Config.StandDeposit, 'hot dog deposit')
+        Player.RemoveMoney('bank', Config.StandDeposit, 'hot dog deposit')
         Bail[Player.PlayerData.citizenid] = true
         cb(true)
     else
@@ -17,10 +17,10 @@ QBCore.Functions.CreateCallback('qb-hotdogjob:server:HasMoney', function(source,
 end)
 
 QBCore.Functions.CreateCallback('qb-hotdogjob:server:BringBack', function(source, cb)
-    local Player = QBCore.Functions.GetPlayer(source)
+    local Player = exports['qb-core']:GetPlayer(source)
 
     if Bail[Player.PlayerData.citizenid] then
-        Player.Functions.AddMoney('bank', Config.StandDeposit, 'hot dog deposit')
+        Player.AddMoney('bank', Config.StandDeposit, 'hot dog deposit')
         cb(true)
     else
         cb(false)
@@ -32,32 +32,32 @@ end)
 RegisterNetEvent('qb-hotdogjob:server:Sell', function(coords, amount, price)
     local src = source
     local pCoords = GetEntityCoords(GetPlayerPed(src))
-    local Player = QBCore.Functions.GetPlayer(src)
+    local Player = exports['qb-core']:GetPlayer(src)
     if not Player then return end
     if #(pCoords - coords) > 4 then exports['qb-core']:ExploitBan(src, 'hotdog job') end
-    Player.Functions.AddMoney('cash', tonumber(amount * price), 'sold hotdog')
+    Player.AddMoney('cash', tonumber(amount * price), 'sold hotdog')
 end)
 
 RegisterNetEvent('qb-hotdogjob:server:UpdateReputation', function(quality)
     local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
+    local Player = exports['qb-core']:GetPlayer(src)
     if quality == 'exotic' then
-        if Player.Functions.GetRep('hotdog') + 3 > Config.MaxReputation then
-            Player.Functions.AddRep('hotdog', Config.MaxReputation - Player.Functions.GetRep('hotdog'))
+        if Player.GetRep('hotdog') + 3 > Config.MaxReputation then
+            Player.AddRep('hotdog', Config.MaxReputation - Player.GetRep('hotdog'))
         else
-            Player.Functions.AddRep('hotdog', 3)
+            Player.AddRep('hotdog', 3)
         end
     elseif quality == 'rare' then
-        if Player.Functions.GetRep('hotdog') + 2 > Config.MaxReputation then
-            Player.Functions.AddRep('hotdog', Config.MaxReputation - Player.Functions.GetRep('hotdog'))
+        if Player.GetRep('hotdog') + 2 > Config.MaxReputation then
+            Player.AddRep('hotdog', Config.MaxReputation - Player.GetRep('hotdog'))
         else
-            Player.Functions.AddRep('hotdog', 2)
+            Player.AddRep('hotdog', 2)
         end
     elseif quality == 'common' then
-        if Player.Functions.GetRep('hotdog') + 1 > Config.MaxReputation then
-            Player.Functions.AddRep('hotdog', Config.MaxReputation - Player.Functions.GetRep('hotdog'))
+        if Player.GetRep('hotdog') + 1 > Config.MaxReputation then
+            Player.AddRep('hotdog', Config.MaxReputation - Player.GetRep('hotdog'))
         else
-            Player.Functions.AddRep('hotdog', 1)
+            Player.AddRep('hotdog', 1)
         end
     end
 

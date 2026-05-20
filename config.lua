@@ -8,16 +8,16 @@ Config.MyLevel = 1
 Config.MaxReputation = 200
 
 Config.Locations = {
-    ["take"] = {
+    ['take'] = {
         coords = vector4(39.31, -1005.54, 29.48, 240.57),
     },
-    ["spawn"] = {
+    ['spawn'] = {
         coords = vector4(38.15, -1001.65, 29.44, 342.5),
     },
 }
 
 Config.Stock = {
-    ["exotic"] = {
+    ['exotic'] = {
         Current = 0,
         Max = {
             [1] = 15,
@@ -25,7 +25,7 @@ Config.Stock = {
             [3] = 45,
             [4] = 60,
         },
-        Label = Lang:t("info.label_a"),
+        Label = Lang:t('info.label_a'),
         Price = {
             [1] = {
                 min = 8,
@@ -45,7 +45,7 @@ Config.Stock = {
             },
         }
     },
-    ["rare"] = {
+    ['rare'] = {
         Current = 0,
         Max = {
             [1] = 15,
@@ -53,7 +53,7 @@ Config.Stock = {
             [3] = 45,
             [4] = 60,
         },
-        Label = Lang:t("info.label_b"),
+        Label = Lang:t('info.label_b'),
         Price = {
             [1] = {
                 min = 6,
@@ -73,7 +73,7 @@ Config.Stock = {
             },
         }
     },
-    ["common"] = {
+    ['common'] = {
         Current = 0,
         Max = {
             [1] = 15,
