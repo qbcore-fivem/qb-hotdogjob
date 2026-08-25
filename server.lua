@@ -35,7 +35,18 @@ RegisterNetEvent('qb-hotdogjob:server:Sell', function(coords, amount, price)
     local Player = exports['qb-core']:GetPlayer(src)
     if not Player then return end
     if #(pCoords - coords) > 4 then exports['qb-core']:ExploitBan(src, 'hotdog job') end
-    Player.AddMoney('cash', tonumber(amount * price), 'sold hotdog')
+
+    local sellAmount = math.floor(tonumber(amount) or 0)
+    local sellPrice = tonumber(price) or 0
+    if sellAmount <= 0 or sellPrice <= 0 then return end
+
+    local hotdogItem = Player.Functions.GetItemByName('hotdog')
+    if not hotdogItem or not hotdogItem.amount or hotdogItem.amount < sellAmount then return end
+
+    local removed = Player.Functions.RemoveItem('hotdog', sellAmount)
+    if not removed then return end
+
+    Player.AddMoney('cash', sellAmount * sellPrice, 'sold hotdog')
 end)
 
 RegisterNetEvent('qb-hotdogjob:server:UpdateReputation', function(quality)
