@@ -627,7 +627,7 @@ local function SellToPed(ped)
                                     label = Lang:t('info.sell_dogs_target', { value = HotdogsForSale, value2 = (HotdogsForSale * SellingPrice) }),
                                     action = function(entity)
                                         QBCore.Functions.Notify(Lang:t('success.sold_hotdogs', { value = HotdogsForSale, value2 = (HotdogsForSale * SellingPrice) }), 'success')
-                                        TriggerServerEvent('qb-hotdogjob:server:Sell', pedCoords, HotdogsForSale, SellingPrice)
+                                        TriggerServerEvent('qb-hotdogjob:server:Sell', pedCoords, SellingData.Hotdog, HotdogsForSale, SellingPrice)
                                         SellingData.HasTarget = false
                                         LoadAnim('mp_common')
                                         TaskPlayAnim(PlayerPedId(), 'mp_common', 'givetake1_b', 8.0, 8.0, 1100, 48, 0.0, 0, 0, 0)
@@ -666,7 +666,7 @@ local function SellToPed(ped)
                     DrawText3Ds(pedCoords.x, pedCoords.y, pedCoords.z, Lang:t('info.sell_dogs', { value = HotdogsForSale, value2 = (HotdogsForSale * SellingPrice) }))
                     if IsControlJustPressed(0, 161) or IsDisabledControlJustPressed(0, 161) then
                         QBCore.Functions.Notify(Lang:t('success.sold_hotdogs', { value = HotdogsForSale, value2 = (HotdogsForSale * SellingPrice) }), 'success')
-                        TriggerServerEvent('qb-hotdogjob:server:Sell', pedCoords, HotdogsForSale, SellingPrice)
+                        TriggerServerEvent('qb-hotdogjob:server:Sell', pedCoords, SellingData.Hotdog, HotdogsForSale, SellingPrice)
                         SellingData.HasTarget = false
                         local Myped = PlayerPedId()
 
